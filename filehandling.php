@@ -51,79 +51,46 @@ fclose($myFile);
 */
 
     /*
-$myFile = fopen("MyBudget.txt", "r") or die("Unable to open file!");
+    $textArray14r = file("MyBudget.txt");
 
-echo "<table>";
-while (!feof($myFile)) {
-    echo "<tr><td width='1150' bgcolor='grey'>";
-    echo fgets($myFile) . "<br>";
-    echo "</td></tr>";
-}
-echo "</table>";
-fclose($myFile);
-*/
-
-
-    /*
-if ($MyFile = fopen("MyBudget.txt", "r"))
-{
-$counter = 1;
-echo "<table border = 2";
-while (!feof($MyFile)) {
-   $data = fgets($MyFile);
-   echo "<tr><td>$counter</td>";
-   echo "<td>" . chunk_split($data, 5, " | ") . "</td>";
-   $counter++;
-}
-fclose($MyFile);
-} else {
-    echo "Unable to open file!!";
-}
-*/
-    /*
-    if ($MyFile = fopen("MyBudget.txt", "r")) {
-        $counter = 1;
-        echo "<table border = 2";
-        while (!feof($MyFile)) {
-            $data = fgets($MyFile);
-            echo "<tr><td>$counter</td>";
-            for ($i = 1; $i < 5; $i++){
-            echo "<td>" . chunk_split($data, $i, " ") . "</td>";
-            $counter++;
-            }
-        }
-        fclose($MyFile);
-    } else {
-        echo "Unable to open file!!";
+    foreach ($textArray14r as $key => $column) {
+        array_map("<td></td>", $column);
     }
 */
 
-    
-    //echo "<pre>", print_r(file("MyBudget.txt")), "</pre>";
-    //$txt = fopen("MyBudget.txt", "r");
-    //$arrayString[0] = fgets($txt);
-    //echo $arrayString[0];
-    //echo "<br>", str_word_count($arrayString[0]);
-    //$counter = 1;
-    //for ($counter=1; $counter < 23; $counter++) {
-    //    echo "<td>" . chunk_split($arrayString[0], 4, ".") . "</td>"; 
-    //}
-    //echo str_word_count();
-    //chunk_split();
-    //explode();
-    //str_split();
-  /*  $myFile = fopen("MyBudget.txt", "r");
-    $str = fgets($myFile);
-    for ($i = 5; $i <= 5; $i++) {
-        echo "<span styl\"color:red\">$i</span>:" . chunk_split($str, $i, "\r\n") . " <br />";
-    } */
-
-    #
     $textArray14r = file("MyBudget.txt");
     echo "<pre>", print_r($textArray14r), "</pre>";
+
     $textArray23c = explode("\t", $textArray14r[0]);
-    echo "<pre>", print_r($textArray23c), "</pre>";
+    echo '<br>' . print_r($textArray23c) ;
+
+    $zeroThirteen = array_values($textArray23c);
+    
+
+/*
+echo "<table border='1px solid'";
+
+    echo '<tr>';
+        foreach ($zeroThirteen as $value) echo '<th>' . $value . '</th>';
+    echo '</tr>';
+        foreach ($textArray14r as $value) echo '<td>' . $value . '</td>'; 
+echo '</table>';
+
+echo "<table border='1px solid'";
+*/
+
+    echo '<tr>';
+        foreach ($zeroThirteen as $value) echo '<th>' . $value . '</th>';
+    echo '</tr>';
+        foreach ($textArray14r as $value) echo '<td>' . $value . '</td>'; 
+echo '</table>';
+
+
+
     ?>
 
+
+
 </body>
+
 </html>
